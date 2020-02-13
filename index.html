@@ -209,10 +209,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-12 14:04:40 / 修改时间：14:32:20" itemprop="dateCreated datePublished" datetime="2020-02-12T14:04:40+08:00">2020-02-12</time>
+              <time title="创建时间：2020-02-12 14:04:40" itemprop="dateCreated datePublished" datetime="2020-02-12T14:04:40+08:00">2020-02-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:52:34" itemprop="dateModified" datetime="2020-02-13T11:52:34+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -251,45 +257,14 @@
 
       
           <h1 id="1-浏览器介绍"><a href="#1-浏览器介绍" class="headerlink" title="1.浏览器介绍"></a>1.浏览器介绍</h1><h3 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览器是指可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）的内容，并让用户与这些文件交互的一种软件。它用来显示在万维网或局域网等内的文字、图像及其他信息。这些文字或图像，可以是连接其他网址的超链接，用户可迅速及轻易地浏览各种信息。大部分网页为HTML格式。</p>
-<h3 id="1-2-常用浏览器"><a href="#1-2-常用浏览器" class="headerlink" title="1.2 常用浏览器"></a>1.2 常用浏览器</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常用的浏览器有QQ浏览器、Internet Explorer浏览器、Mozilla Firefox浏览器、Google Chrome浏览器、Safari浏览器、Opera浏览器、UC浏览器、猎豹浏览器、搜狗浏览器、360浏览器等等。在前端开发中，常用的浏览器是Google Chrome浏览器和Mozilla Firefox浏览器，在功能调试方面，效率很高，而且它们有许多优秀的扩展插件，可以帮助开发者们更快的进行开发。</p>
-<h3 id="1-3-浏览器市场份额"><a href="#1-3-浏览器市场份额" class="headerlink" title="1.3 浏览器市场份额"></a>1.3 浏览器市场份额</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetMarketShare最新公布了2019年10月份的浏览器市场份额数据。Chrome相比上个月出现了略微的降幅，但仍一马当先，依旧是近七成用户的浏览器首选。</p>
-<p><img src="/images/browser/1.jpg" alt="大数据"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以看出，Chrome浏览器在市场占有率上不仅长期保持领先地位，并且以极大优势远远甩开第二名，排名第二的Mozilla Firefox也出现了小幅下降，从两个月前的8.68%下降到目前的8.63%。不过比起与第一名之间的市场份额鸿沟，这样小的变动也无足挂齿。</p>
-<h3 id="1-4浏览器内核"><a href="#1-4浏览器内核" class="headerlink" title="1.4浏览器内核"></a>1.4<a href="[https://baike.baidu.com/item/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8](https://baike.baidu.com/item/浏览器内核)">浏览器内核</a></h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览器最重要或者说核心的部分是“Rendering Engine”，可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释（如标准通用标记语言下的一个应用HTML、JavaScript）并渲染（显示）网页。 所以，通常所谓的浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。不同的浏览器内核对网页编写语法的解释也有不同，因此同一网页在不同的内核的浏览器里的渲染（显示）效果也可能不同，这也是网页编写者需要在不同内核的浏览器中测试网页显示效果的原因。</p>
-<h3 id="1-4-1内核分类"><a href="#1-4-1内核分类" class="headerlink" title="1.4.1内核分类"></a>1.4.1内核分类</h3><ul>
-<li><p>Presto内核</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个动态内核，与前面几个内核的最大的区别就在脚本处理上，Presto有着天生的优势，页面的全部或者部分都能够在回应脚本事件时等情况下被重新解析。此外该内核在执行Javascrīpt的时候有着最快的速度，根据在同等条件下的测试，Presto内核执行同等Javascrīpt所需的时间仅有Trident和Gecko内核的约1/3（Trident内核最慢，不过两者相差没有多大），本文的其中一个修改者认为上述测试信息过于老旧且不完整，因为他曾做过的小测试显示Presto部分快部分慢，各内核总体相当。那次测试的时候因为Apple机的硬件条件和普通PC机不同所以没有测试WebCore内核。只可惜Presto是商业引擎，使用Presto的除开Opera以外，只剩下NDSBrowser、Wii Internet Channle、Nokia 770网络浏览器等，这很大程度上限制了Presto的发展。(<span style="color:red;">Opera现已改用Google Chrome的Blink内核。</span>)</p>
-</li>
-<li><p>Gecko内核</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gecko（Firefox内核）：Netscape6开始采用的内核，后来的Mozilla FireFox（火狐浏览器） 也采用了该内核，Gecko的特点是代码完全公开，因此，其可开发程度很高，全世界的程序员都可以为其编写代码，增加功能。因为这是个开源内核，因此受到许多人的青睐，Gecko内核的浏览器也很多，这也是Gecko内核虽然年轻但市场占有率能够迅速提高的重要原因。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gecko内核常见的浏览器：Mozilla Firefox、Mozilla SeaMonkey、waterfox（Firefox的64位开源版）、Iceweasel、Epiphany（早期版本）、Flock（早期版本）、K-Meleon。</p>
-</li>
-<li><p>Blink内核</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blink是一个由Google和Opera Software开发的浏览器排版引擎，Google计划将这个渲染引擎作为Chromium计划的一部分，并且在2013年4月的时候公布了这一消息。这一渲染引擎是开源引擎WebKit中WebCore组件的一个分支，并且在Chrome（28及往后版本）、Opera（15及往后版本）和Yandex浏览器中使用。</p>
-</li>
-<li><p>Webkit内核</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Webkit（Safari内核，Chrome内核原型，开源）:它是苹果公司自己的内核，也是苹果的Safari浏览器使用的内核。 Webkit引擎包含WebCore排版引擎及JavaScriptCore解析引擎，均是从KDE的KHTML及KJS引擎衍生而来，它们都是自由软件，在GPL条约下授权，同时支持BSD系统的开发。所以Webkit也是自由软件，同时开放源代码。在安全方面不受IE、Firefox的制约，所以Safari浏览器在国内还是很安全的。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WebKit内核常见的浏览器：傲游浏览器3、Apple Safari （Win/Mac/iPhone/iPad）、Symbian手机浏览器、Android 默认浏览器</p>
-</li>
-<li><p>Trident（也称IE内核）</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trident(又叫MSHTML)，是微软开发的一种排版引擎。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trident内核的常见浏览器有：IE6、IE7、IE8（Trident 4.0）、IE9（Trident 5.0）、IE10（Trident 6.0）；360安全浏览器（1.0-5.0为Trident，6.0为Trident+Webkit，7.0为Trident+Blink）猎豹极轻浏览器，360极速浏览器（7.5之前为Trident+Webkit，7.5为Trident+Blink）猎豹安全浏览器（1.0-4.2版本为Trident+Webkit，4.3及以后版本为Trident+Blink）猎豹极轻浏览器，傲游浏览器（傲游1.x、2.x为IE内核，3.x为IE与Webkit双核）、百度浏览器（早期版本）、世界之窗浏览器（最初为IE内核，2013年采用Chrome+IE内核）、2345浏览器、腾讯TT、淘宝浏览器、采编读浏览器、搜狗高速浏览器（1.x为Trident，2.0及以后版本为Trident+Webkit）、阿云浏览器（早期版本）、瑞星安全浏览器、Slim Browser、 GreenBrowser、爱帆浏览器（12 之前版本）、115浏览器、155浏览器、闪游浏览器、N氧化碳浏览器、糖果浏览器、彩虹浏览器、瑞影浏览器、勇者无疆浏览器、114浏览器、蚂蚁浏览器、飞腾浏览器、速达浏览器、佐罗浏览器、海豚浏览器（iPhone/iPad/Android）、UC浏览器(Webkit内核+Trident内核)等。</p>
-<p>其中部分浏览器的新版本是“双核”甚至是“多核”，其中一个内核是Trident，然后再增加一个其他内核。国内的厂商一般把其他内核叫做“高速浏览模式”，而Trident则是“兼容浏览模式”，用户可以来回切换。</p>
-<p>Win10系统发布后，微软将将其IE内置浏览器命名为<a href="https://yafine-blog.cn/go.html?url=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9NaWNyb3NvZnQlMjBFZGdlLzE3NTExOTY2P2ZyPWFsYWRkaW4=" target="_blank" rel="noopener">Microsoft Edge浏览器</a>，2018年12月，微软正式确认，新的Edge浏览器将从EdgeHTML内核迁移为Chromium内核，同时还会登陆到Windows 7/8/8.1和macOS平台。</p>
-<h3 id="1-4-2浏览器使用的内核"><a href="#1-4-2浏览器使用的内核" class="headerlink" title="1.4.2浏览器使用的内核"></a>1.4.2浏览器使用的内核</h3><ul>
-<li>IE浏览器内核：Trident内核，也是俗称的IE内核；</li>
-<li>Chrome浏览器内核：统称为Chromium内核或Chrome内核，以前是Webkit内核，现在是Blink内核；</li>
-<li>Firefox浏览器内核：Gecko内核，俗称Firefox内核；</li>
-<li>Safari浏览器内核：Webkit内核；</li>
-<li>Opera浏览器内核：最初是自己的Presto内核，后来是Webkit，现在是Blink内核；</li>
-<li>360浏览器、猎豹浏览器内核：IE+Chrome双内核；</li>
-<li>搜狗、遨游、QQ浏览器内核：Trident（兼容模式）+Webkit（高速模式）；</li>
-<li>百度浏览器、世界之窗内核：IE内核；</li>
-<li>2345浏览器内核：以前是IE内核，现在也是IE+Chrome双内核；</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%8B%E7%BB%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -331,10 +306,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-30 17:02:13 / 修改时间：17:11:58" itemprop="dateCreated datePublished" datetime="2020-01-30T17:02:13+08:00">2020-01-30</time>
+              <time title="创建时间：2020-01-30 17:02:13" itemprop="dateCreated datePublished" datetime="2020-01-30T17:02:13+08:00">2020-01-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:58:22" itemprop="dateModified" datetime="2020-02-13T11:58:22+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -374,8 +355,14 @@
       
           <p> 2020年1月30日，今天是新型冠状病毒发生的已经不知道多少天，今天和往常一样特别的无聊，每天刷刷抖音，追追剧，看看电影，打打游戏用这种方式打发时间，每天肆无忌惮、无所事事跟没了魂是的，感觉自己提前体验到了老年的生活，真希望这件事赶快过去，以后永远不要在发生。</p>
 <p><img src="/images/sui_bi/1.png" alt="setting sun"></p>
-<p>今天也是中国春节的第六天，和往年不一样，因为这讨厌有可怕的病毒弄得一点年味都没有了，每年都会和长辈们四处拜年，和朋友们一起聚会，鞭炮齐鸣，人们欢声笑语祝福新年，而今年这些已经不在肯能了，关门的关门，封路的封路，几乎哪里都去不了，感觉整个人已经颓废了。希望病毒赶快消失，让这个社会在回到从前，加油中国，加油武汉！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/30/2020-1-30%E9%9A%8F%E7%AC%94/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -417,10 +404,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-07 22:30:05 / 修改时间：22:56:27" itemprop="dateCreated datePublished" datetime="2020-01-07T22:30:05+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-07 22:30:05" itemprop="dateCreated datePublished" datetime="2020-01-07T22:30:05+08:00">2020-01-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:58:57" itemprop="dateModified" datetime="2020-02-13T11:58:57+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -461,17 +454,14 @@
           <p>在CES2020展会上索尼首次亮相了旗下首款纯电概念车型——VISION - S</p>
 <p><img src="/images/CES2020/SONY/1.jpg" alt="SONY"></p>
 <p>​        这款VISION-S定位为四门轿跑车，外观方面，车身整体圆润，车头采用封闭式格栅配合下方大尺寸梯形进气口，让整体看起来十分运动。车头大灯组为圆润狭窄设计，并由一条光带贯穿连接，形成该车的LOGO，非常具有未来科技感。</p>
-<p>作为索尼旗下第一款纯电动概念车型，VISION-S配备了众多索尼黑科技。</p>
-<p><img src="/images/CES2020/SONY/2.jpg" alt="SONY"></p>
-<p>​        首先是安全方面的黑科技。索尼利用自身在影像处理方面的技术积累，将图像传感器与雷达传感器相融合，并将33个传感器嵌入到车身中，能够自动识别出行人、车辆等物体，系统及时作出正确的安全反应。</p>
-<p><img src="/images/CES2020/SONY/3.jpg" alt="SONY"></p>
-<p>​        索尼CEO吉田宪一郎介绍到，VISION-S在JNCAP（日本汽车安全评估机构）中的<strong>夜间行人的自动紧急制动测试</strong>中得分最高，能够为用户提供充足的安全保障。</p>
-<p><img src="/images/CES2020/SONY/4.jpg" alt="SONY"></p>
-<p>​        内饰方面，VISION-S采用了全景屏视窗，从左到右并排放置了三块屏幕，将索尼娱乐的优势充分展示在其中，用户行驶的过程中能够获得实时信息更新和娱乐互动。</p>
-<p><img src="/images/CES2020/SONY/5.jpg" alt="SONY"></p>
-<p>同时，VISION-S还将搭载360°临场声效，给用户带来更极致的声音体验。</p>
-<p>索尼还宣布了一系列的合作伙伴包括博世、黑莓、英伟达、高通等。索尼并未明确表示VISION-S是否会大规模量产，但可以想象得到，索尼此次黑科技造车，已经是亮点满满！</p>
-<div style="color:#f00">内容摘自太平洋网络</div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/SONY%E6%B1%BD%E8%BD%A6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -513,10 +503,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-07 22:16:38 / 修改时间：23:00:14" itemprop="dateCreated datePublished" datetime="2020-01-07T22:16:38+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-07 22:16:38" itemprop="dateCreated datePublished" datetime="2020-01-07T22:16:38+08:00">2020-01-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:57:36" itemprop="dateModified" datetime="2020-02-13T11:57:36+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -557,13 +553,14 @@
           <p>​        在每一年的<a href="http://ces.yesky.com" target="_blank" rel="noopener">CES</a>上，<a href="http://product.yesky.com/refrigerator/samsung/" target="_blank" rel="noopener">三星</a>总有一些出人意料的产品发布，而今年CES 2020上这一传统也得到了保留，在刚刚结束的三星发布会上，他们展示了一个“球”。</p>
 <p>​        三星电子消费电子部门总裁兼首席执行官金玄石(Hyun-Suk Kim)以“体验时代”为主题进行了一个演讲，他同时宣布，在未来十年三星将以人为本进行创新，并且表示创新将会让硬件和软件无缝的结合在一起，并且创造了个性化的体验。</p>
 <p><img src="/images/CES2020/SAMSUNG/1.png" alt="SAMSUNG"></p>
-<p>​        但是，在演讲过程中，主角好像并不是金玄石，而是一款名为Ballie的球形设计机器人，它可以沿着地面滚动，同时还可以帮助用户完成一些日常任务，如果你把它当做宠物完全没问题，不过，实际上，它胜任电子管家的职位也是绰绰有余。</p>
-<p>​        在发布会上，一段演示视频很吸引人，当宠物的主人不在家的时候，Ballie可以打开<a href="http://product.yesky.com/zhinengcl/" target="_blank" rel="noopener">智能窗帘</a>，并给狗狗打开<a href="http://product.yesky.com/lcdtv/" target="_blank" rel="noopener">电视</a>，并且还可以将狗狗的视频发送给主人，在发现狗狗随地大小便之后，它还可以要求<a href="http://product.yesky.com/vacuumcleaner/" target="_blank" rel="noopener">吸尘器</a>机器人来采取行动。</p>
-<p>​        三星正在用Ballie来构建一个更为智能的未来，例如它可以督促用户锻炼，发生紧急事件是发出救援，甚至还可以检查用户瑜伽动作是否正确。如果，家中有了Ballie，似乎生活都能变得轻松、愉悦不少。</p>
-<p>​        三星表示，他们希望大家用“Ballie”这个名称来称呼这款多功能机器人，而Ballie也出现在上个月的商标申请中，但是，它要想<a href="http://product.yesky.com/ultrabook/shangyong" target="_blank" rel="noopener">商用</a>的话，估计还需要两到三年的时间。</p>
-<p><img src="/images/CES2020/SAMSUNG/2.jpg" alt="SAMSUNG"></p>
-<p>你是否也很期待这个小家伙？</p>
-<div style="color:#f00">内容摘自天极网</div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/CES2020%E4%B8%89%E6%98%9F%E7%90%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -605,10 +602,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-07 21:48:43 / 修改时间：22:27:21" itemprop="dateCreated datePublished" datetime="2020-01-07T21:48:43+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-07 21:48:43" itemprop="dateCreated datePublished" datetime="2020-01-07T21:48:43+08:00">2020-01-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:57:49" itemprop="dateModified" datetime="2020-02-13T11:57:49+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -648,13 +651,14 @@
       
           <h1 id="联想发布折叠屏PCThinkPad-X-Fold"><a href="#联想发布折叠屏PCThinkPad-X-Fold" class="headerlink" title="联想发布折叠屏PCThinkPad X Fold"></a>联想发布折叠屏PCThinkPad X Fold</h1><p>​        据悉，ThinkPad X Fold搭载了13.3英寸的4:3OLED显示屏，分辨率2048*1536。着铰链的来回滑动，这块屏幕可以折叠或展开。另外这款折叠屏产品还配置了一块10.<a href="http://product.yesky.com/digitalalbum/8in" target="_blank" rel="noopener">8英寸</a>的外屏，当<a href="http://product.yesky.com/notebookpc/" target="_blank" rel="noopener">笔记本</a>合上后，这款产品外屏仍然可以继续运行。联想表示该设备的屏幕来自于LG Display，这也是联想和该公司合作四年的产物，联想对它的耐用性充满了信心。</p>
 <p><img src="/images/CES2020/Lenovo/1.jpg" alt="CES联想"></p>
-<p>​        ThinkPad x1 Fold运行Windows 10pro，用户可以在单一全屏视图或双屏模式之间。切换。在竖屏模式下<a href="http://product.yesky.com/notebookpc/x1/thinkpad/" target="_blank" rel="noopener">ThinkPad X1</a> Fold运行<a href="http://product.yesky.com/notebookpc/win10" target="_blank" rel="noopener">Windows 10</a> Pro，用户可以在单一全屏视图或双屏模式之间切换。在竖屏模式下，用户可以选择将整个屏幕折成一个角度，在屏幕下半部分打开虚拟<a href="http://product.yesky.com/keyboard/" target="_blank" rel="noopener">键盘</a>，像在传统笔记本上一样打字。X1还配有一个<a href="http://product.yesky.com/speaker/bluetooth" target="_blank" rel="noopener">蓝牙</a>键盘，可以磁性吸附到<a href="http://product.yesky.com/lcd/" target="_blank" rel="noopener">显示器</a>的下半部分。</p>
-<p><img src="/images/CES2020/Lenovo/2.png" alt="CES联想"></p>
-<p>​        目前ThinkPad X1 Fold的性能配置还不是很清楚，联想表示他将采用英特尔最新平台，续航长达11小时。</p>
-<p><img src="/images/CES2020/Lenovo/3.jpg" alt="CES联想"></p>
-<div style="color:#f00">内容摘自天极网</div>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/CES2020%E8%81%94%E6%83%B3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -696,10 +700,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-07 20:46:46 / 修改时间：20:48:38" itemprop="dateCreated datePublished" datetime="2020-01-07T20:46:46+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-07 20:46:46" itemprop="dateCreated datePublished" datetime="2020-01-07T20:46:46+08:00">2020-01-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-13 11:54:41" itemprop="dateModified" datetime="2020-02-13T11:54:41+08:00">2020-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -740,12 +750,14 @@
           <h1 id="完成Blog部分"><a href="#完成Blog部分" class="headerlink" title="完成Blog部分"></a>完成Blog部分</h1><ul>
 <li><p>原图</p>
 <p><img src="/images/webBig_data/14.png" alt="大数据"></p>
-</li>
-<li><p>效果图</p>
-<p><img src="/images/webBig_data/15.png" alt="大数据"></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A09/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
