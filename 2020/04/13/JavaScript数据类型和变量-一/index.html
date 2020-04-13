@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32_2.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16_2.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://SriHzz.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="数据类型计算机顾名思义就是可以做数学计算的机器，因此，计算机程序理所应当可以处理各种数值，但是远不止数值，还有文本、音频、视频、图片、网页等各种各样的数据，不同数据需要定义不同的数据类型，下面是JavaScript几类数据类型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数据类型和变量(一)">
+<meta property="og:url" content="https://srihzz.github.io/2020/04/13/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%B8%80/index.html">
+<meta property="og:site_name" content="Hzz的博客">
+<meta property="og:description" content="数据类型计算机顾名思义就是可以做数学计算的机器，因此，计算机程序理所应当可以处理各种数值，但是远不止数值，还有文本、音频、视频、图片、网页等各种各样的数据，不同数据需要定义不同的数据类型，下面是JavaScript几类数据类型。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-13T08:52:56.000Z">
+<meta property="article:modified_time" content="2020-04-13T09:04:12.573Z">
+<meta property="article:author" content="Hzz">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://srihzz.github.io/2020/04/13/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%B8%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>JavaScript数据类型和变量(一) | Hzz的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hzz的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">欢迎来到Hzz的博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://srihzz.github.io/2020/04/13/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%B8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="Hzz">
+      <meta itemprop="description" content="科技发烧友 / IT小白 / 音乐鬼才">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hzz的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript数据类型和变量(一)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-13 16:52:56 / 修改时间：17:04:12" itemprop="dateCreated datePublished" datetime="2020-04-13T16:52:56+08:00">2020-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>计算机顾名思义就是可以做数学计算的机器，因此，计算机程序理所应当可以处理各种数值，但是远不止数值，还有文本、音频、视频、图片、网页等各种各样的数据，不同数据需要定义不同的数据类型，下面是JavaScript几类数据类型。</p>
+<a id="more"></a>
+
+<h5 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h5><p>JavaScript不区分整数和浮点数，统一用Number表示，以下是合法的Number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span>;		<span class="comment">//整数123</span></span><br><span class="line"></span><br><span class="line"><span class="number">0.23</span>;  		<span class="comment">//浮点数0.23</span></span><br><span class="line"></span><br><span class="line"><span class="number">1.2345e3</span>;  	<span class="comment">//科学计数法表示1.2345*1000，等同于1234.5</span></span><br><span class="line"></span><br><span class="line"><span class="number">-99</span>;		<span class="comment">//负数</span></span><br><span class="line"></span><br><span class="line"><span class="literal">NaN</span>;		<span class="comment">//NaN表示Not a Namber，当无法计算的结果使用NaN表示</span></span><br><span class="line"></span><br><span class="line"><span class="literal">Infinity</span>	<span class="comment">//Infinity表示无限大，当数值超过了JavaScript的Number所能使用的最大值时，就表示为Infinity</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>计算机由于是二进制的，所以有时候使用十六进制表示整数比较方便，十六进制使用0x做前缀，0-9，a-f的取值范围，例如<code>0xff1</code>,<code>0x12f3</code>,等等它和十进制表示的数值完全相同</p>
+</blockquote>
+<p>Number可以直接使用四则运算</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span>;	<span class="comment">//3，加法运算</span></span><br><span class="line"><span class="number">2</span> - <span class="number">1</span>;	<span class="comment">//1，减法运算</span></span><br><span class="line"><span class="number">2</span> * <span class="number">2</span>;	<span class="comment">//4，乘法运算</span></span><br><span class="line"><span class="number">9</span> / <span class="number">3</span>;	<span class="comment">//3，除法运算</span></span><br><span class="line"><span class="number">10</span>% <span class="number">3</span>;	<span class="comment">//1，求余运算</span></span><br><span class="line"><span class="number">0</span> / <span class="number">0</span>;	<span class="comment">//NaN</span></span><br><span class="line"><span class="number">2</span> / <span class="number">0</span>;	<span class="comment">//Infinity</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="String"><a href="#String" class="headerlink" title="String"></a>String</h5><p>字符串以单引号’和双引号“括起来的任意文本，比如<code>&#39;abc&#39;</code>,<code>&quot;abc&quot;</code>等等</p>
+<h5 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h5><p>布尔值和布尔代数完全一致，一个布尔值只有<code>true</code>,<code>false</code>两种，要么是<code>true</code>，要么是<code>false</code>，他们可以直接使用，也可以通过布尔运算获得</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span>;	<span class="comment">//返i回true</span></span><br><span class="line"><span class="literal">false</span>;	<span class="comment">//返回false</span></span><br><span class="line"><span class="number">2</span> &gt; <span class="number">1</span>;	<span class="comment">//返回true</span></span><br><span class="line"><span class="number">2</span> =<span class="xml"><span class="tag">&lt; <span class="attr">1</span>;	//返回<span class="attr">false</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>&amp;&amp;</code>代表与运算符，只有所有都为<code>true</code>才为true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> || <span class="literal">true</span>;	<span class="comment">//返回true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>;	<span class="comment">//返回false</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span> || <span class="literal">false</span>	<span class="comment">//返回false</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span> || <span class="literal">true</span>	<span class="comment">//返回true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>||</code>代表或运算符，只要有一个<code>true</code>就返回true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> || <span class="literal">true</span>;	<span class="comment">//返回true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>;	<span class="comment">//返回true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>;	<span class="comment">//false</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span> || <span class="literal">false</span>	<span class="comment">//true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span> || <span class="literal">true</span>	<span class="comment">//返回true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>!</code>非运算符，它是一个单目运算符，可以将<code>true</code>转换为<code>false</code> ,可以将<code>false</code>转换为<code>true</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!<span class="literal">true</span>	<span class="comment">//返回false</span></span><br><span class="line">!<span class="literal">false</span>	<span class="comment">//返回true</span></span><br><span class="line">!(<span class="number">2</span>&gt;<span class="number">5</span>)	<span class="comment">//饭后true</span></span><br></pre></td></tr></table></figure>
+
+<p>布尔值常用的<code>if</code>判断</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">20</span> &gt; age)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"我比age大！！！"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"我比age小！！！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比较运算符</p>
+<p>我们在使用对比运算符比较时，可以通过比较运算符获取布尔值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 &gt; 5;	&#x2F;&#x2F;返回false</span><br><span class="line">5 &gt;&#x3D; 2;	&#x2F;&#x2F;饭后true</span><br><span class="line">var a &#x3D; 5;</span><br><span class="line">a &#x3D;&#x3D; a;	&#x2F;&#x2F;返回true</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript支持任何数据类型比较</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span> == <span class="number">0</span>;	<span class="comment">//true</span></span><br><span class="line"><span class="literal">true</span> == <span class="number">1</span>;	<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：<code>==</code>运算符，在JavaScript设计时，有两种比较运算符：</p>
+<p>第一种<code>==</code>,它会自动转换数据类型再比较，很多时候会出现很多非常诡异的结果；</p>
+<p>第二种<code>===</code>,他不会自动转换数据类型，如果类型不一致，直接返回<code>false</code>,如果一致在比较</p>
+<p>由于JavaScript这个缺陷，不要使用<code>==</code>，坚持使用<code>===</code>比较</p>
+</blockquote>
+<p>还有一个特殊的<code>NaN</code>,这个特殊的Number和任何一个值都不相同，包括他自己。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span>	<span class="comment">//返回false</span></span><br></pre></td></tr></table></figure>
+
+<p>不够有一个唯一判断它的方法：<code>isNaN();</code>函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：不要使用JavaScript进行浮点数运算，因为在浮点数运算过程种会产生误差，因为计算机无法精确表示无限循环小数，要是比较两个浮点数是否相等，只能计算他们之间的小数差的绝对值，看是否小于某个阈值</p>
+</blockquote>
+<h5 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h5><p><code>null</code>表示一个”空“值，他和<code>0</code>和<code>&#39; &#39;</code>不同，<code>0</code>表示一个数值，而<code>&#39; &#39;</code>表示一个长度字符串为0，<code>null</code>则表示的是空值。</p>
+<p>在JavaScript还有一个和<code>null</code> 类似的值，<code>undefined</code>它表示’未定义’，其实两者关系不大。所以，一般我们使用<code>null</code>，<code>undefined</code>，仅仅用于判断函数参数是否传递下用</p>
+<h5 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h5><p>数组是一个有顺序的集合，集合中的值称为元素，在JavaScript中数组中可以是任何类型的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'abc'</span> , <span class="number">123</span> , <span class="literal">true</span> , <span class="literal">null</span> , <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; , <span class="literal">undefined</span> , object];</span><br></pre></td></tr></table></figure>
+
+<p>上述包含7个元素，使用<code>[]</code>，将其包裹，使用<code>,</code>分隔</p>
+<p>还有另一种方法<code>Array()</code>函数实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>(<span class="number">1</span> , <span class="number">2</span> , <span class="number">3</span>);	<span class="comment">//和[1 , 2 , 3]一样</span></span><br></pre></td></tr></table></figure>
+
+<p>在开发中我们长使用<code>[]</code>这种方法</p>
+<p>Array中我们可以控制它的索引来访问它其中的元素，索引的初始值是<code>0</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'abc'</span> , <span class="number">123</span> , <span class="literal">true</span> , <span class="literal">null</span> , <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; , <span class="literal">undefined</span> , object;</span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);	<span class="comment">//输出'abc'</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">1</span>]);	<span class="comment">//输出'123'</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>]);	<span class="comment">//输出undefined</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>求大佬赏饭</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechtpay.png" alt="Hzz 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Hzz 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Hzz
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://srihzz.github.io/2020/04/13/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%B8%80/" title="JavaScript数据类型和变量(一)">https://srihzz.github.io/2020/04/13/JavaScript数据类型和变量-一/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/12/gitee%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/" rel="prev" title="gitee图床测试">
+      <i class="fa fa-chevron-left"></i> gitee图床测试
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number"><span class="nav-number">1.1.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String"><span class="nav-number">1.2.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Boolean"><span class="nav-number">1.3.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null和undefined"><span class="nav-number">1.4.</span> <span class="nav-text">null和undefined</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Array"><span class="nav-number">1.5.</span> <span class="nav-text">Array</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hzz"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">Hzz</p>
+  <div class="site-description" itemprop="description">科技发烧友 / IT小白 / 音乐鬼才</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hanshuzheng8@gmail.com" title="E-Mail → mailto:hanshuzheng8@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2062959910&site=qq&menu=yes" title="qq → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2062959910&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>qq</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/350748620" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;350748620" rel="noopener" target="_blank"><i class="fa fa-fw fa-bell-o"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://yoursite.com/" title="http:&#x2F;&#x2F;yoursite.com" rel="noopener" target="_blank">Title</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://baidu.com/" title="http:&#x2F;&#x2F;baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hzz</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
