@@ -49,21 +49,20 @@
   };
 </script>
 
-  <meta name="description" content="科技发烧友 &#x2F; IT小白 &#x2F; 音乐鬼才">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hzz的博客">
-<meta property="og:url" content="https://srihzz.github.io/archives/page/2/index.html">
+  <meta name="description" content="对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数据类型和变量(二)">
+<meta property="og:url" content="https://srihzz.github.io/2020/04/14/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%BA%8C/index.html">
 <meta property="og:site_name" content="Hzz的博客">
-<meta property="og:description" content="科技发烧友 &#x2F; IT小白 &#x2F; 音乐鬼才">
+<meta property="og:description" content="对象">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-14T08:43:41.000Z">
+<meta property="article:modified_time" content="2020-04-14T09:09:13.346Z">
 <meta property="article:author" content="Hzz">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="科技">
-<meta property="article:tag" content="发烧友">
-<meta property="article:tag" content="web开发">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://srihzz.github.io/archives/page/2/">
+<link rel="canonical" href="https://srihzz.github.io/2020/04/14/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%BA%8C/">
 
 
 <script id="page-configurations">
@@ -71,11 +70,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | Hzz的博客</title>
+  <title>JavaScript数据类型和变量(二) | Hzz的博客</title>
   
 
 
@@ -180,235 +179,155 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 24 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://srihzz.github.io/2020/04/14/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%BA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="Hzz">
+      <meta itemprop="description" content="科技发烧友 / IT小白 / 音乐鬼才">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hzz的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript数据类型和变量(二)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-14 16:43:41 / 修改时间：17:09:13" itemprop="dateCreated datePublished" datetime="2020-04-14T16:43:41+08:00">2020-04-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>655</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <h5 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h5><a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>在JavaScript出来基础数据类型(Number、String、Boolean、null、undefined)，其他的都可以成为对象(Object)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = Objeat();	<span class="comment">//声明方式一</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name:<span class="string">'Bob'</span>,</span><br><span class="line">    age:<span class="string">'13'</span>,</span><br><span class="line">    tags:[<span class="string">'js'</span>,<span class="string">'web'</span>,<span class="string">'object'</span>],</span><br><span class="line">    hasCar:<span class="literal">true</span>,</span><br><span class="line">    zipcode:<span class="literal">null</span></span><br><span class="line">&#125;;						<span class="comment">//声明方式二</span></span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-07T21:48:43+08:00"
-              content="2020-01-07">
-          01-07
-        </time>
-      </div>
+<p>JavaScript内部可以是任意数据类型包括<code>null</code></p>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><p>顾名思义，变量就是一个可以改变的量，和我们初中学习的类似，但是有不同之处在JavaScript中变量不仅可以是数字，还可以是任意数据类型</p>
+<p>变量在JavaScript中用一个变量名表示，变量名都是大小写英文字面、数字、$、_的组合，注意不能使用数字开头，也不能是JavaScript关键字，如<code>if</code>,<code>for</code>,<code>while</code>等等，声明变量使用<code>var</code> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abc = <span class="string">"我是一个abc"</span>		<span class="comment">//使用字面做变量名，变量为一个string类型</span></span><br><span class="line"><span class="keyword">var</span> ad_dd11 = <span class="literal">true</span>;	  	  <span class="comment">//使用混合类型变量名，变量为Boolean类型</span></span><br><span class="line"><span class="keyword">var</span> $_a = <span class="number">124</span>;			  <span class="comment">//变量为Number类型</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;			  <span class="comment">//变量为object类型</span></span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/07/CES2020%E8%81%94%E6%83%B3/" itemprop="url">
-            <span itemprop="name">CES 2020联想</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-07T20:46:46+08:00"
-              content="2020-01-07">
-          01-07
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/07/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A09/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习9</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-07T20:39:40+08:00"
-              content="2020-01-07">
-          01-07
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/07/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A08/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习8</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-05T22:10:38+08:00"
-              content="2020-01-05">
-          01-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/05/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A07/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习7</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-04T22:07:55+08:00"
-              content="2020-01-04">
-          01-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/04/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A06/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习6</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-03T14:54:20+08:00"
-              content="2020-01-03">
-          01-03
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/03/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A05/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习5</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-01T23:33:42+08:00"
-              content="2020-01-01">
-          01-01
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/01/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A04/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习4</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-30T00:08:22+08:00"
-              content="2019-12-30">
-          12-30
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/30/%E5%9B%BD%E5%A4%96%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%B9%E8%AE%AD%E7%BD%91%E7%AB%99web%E5%BC%80%E5%8F%91%E7%BB%83%E4%B9%A03/" itemprop="url">
-            <span itemprop="name">国外大数据培训网站web开发练习3</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-23T22:24:49+08:00"
-              content="2019-12-23">
-          12-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/23/%E9%AB%98%E9%80%9A865-%E4%B8%8B/" itemprop="url">
-            <span itemprop="name">高通865(下)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-22T22:12:38+08:00"
-              content="2019-12-22">
-          12-22
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/22/%E9%AB%98%E9%80%9A865(%E4%B8%8A)/" itemprop="url">
-            <span itemprop="name">高通865（上）</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<p>JavaScript中变量也可以是中文，但是在开发过程中为了方便不会使用，切记最好也不要使用。</p>
+<p>JavaScript中<code>=</code>是代表赋值作用，把一个值赋值给另一个值</p>
+<p>​                                                                                                        ————本文借鉴廖老师的JavaScript教学</p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>求大佬赏饭</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechtpay.png" alt="Hzz 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Hzz 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Hzz
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://srihzz.github.io/2020/04/14/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%BA%8C/" title="JavaScript数据类型和变量(二)">https://srihzz.github.io/2020/04/14/JavaScript数据类型和变量-二/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/13/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F-%E4%B8%80/" rel="prev" title="JavaScript数据类型和变量(一)">
+      <i class="fa fa-chevron-left"></i> JavaScript数据类型和变量(一)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -457,6 +376,7 @@
       </ul>
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
